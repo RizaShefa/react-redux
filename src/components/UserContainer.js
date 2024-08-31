@@ -28,10 +28,12 @@ export const UserContainer = ({ userData, fetchUsers1 }) => {
                 const { id: postId, title, body, comments } = post;
 
                 return (
-                  <li key={postId}>
-                    <strong>{title}</strong>
-                    <p>{body}</p>
-                    <h4>Comments:</h4>
+                  <div class="card border-primary mb-3"  key={postId}>
+  <div class="card-header">Header</div>
+  <div class="card-body text-primary">
+    <h5 class="card-title">{title}</h5>
+    <p class="card-text">{body}</p>
+  </div>
                     <ul>
                       
                       {comments && comments.map(comment => {
@@ -45,7 +47,8 @@ export const UserContainer = ({ userData, fetchUsers1 }) => {
                         );
                       })}
                     </ul>
-                  </li>
+</div>
+                  
                 );
               })}
             </ul>
